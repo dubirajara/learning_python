@@ -1,0 +1,5 @@
+.DS_Store
+.bash_profile
+.bash_profile.swp
+*.pyc
+__pycache__
