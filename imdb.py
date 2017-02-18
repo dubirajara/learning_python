@@ -4,7 +4,7 @@ import json
 
 movie = input('Search the movie: ')
 
-url = 'http://www.omdbapi.com/?t={movie}&y=&plot=full&r=json'
+url = f'http://www.omdbapi.com/?t={movie}&y=&plot=full&r=json'
 
 response = requests.get(url)
 values = json.loads(response.text)
