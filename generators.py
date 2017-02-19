@@ -30,3 +30,15 @@ next(gen) # return 4
 next(gen) # return 16
 next(gen) # return 36
 next(gen) # return 64
+
+#Fib Generators
+
+def fib(num):
+	a, b = 0, 1
+
+	for i in range(0, num):
+		yield '{}: {}'.format(i + 1, a)
+		a, b = b, a + b
+
+for item in fib(10):
+	print(item)
