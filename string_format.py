@@ -17,10 +17,10 @@ Team CFE
 # My solution:
 names_amounts = dict(zip(default_names, default_amounts)) # join two list and convert a dict key value
 today = datetime.date.today()
-text = f'{today.day}/{today.month}/{today.year}' # use new style fstring python 3.6
+date_text = f'{today.day}/{today.month}/{today.year}' # use new style fstring python 3.6
 
 for key, value in names_amounts.items():
-    print(unf_message.format(name=key, date=text, total=value))
+    print(unf_message.format(name=key, date=date_text, total=value))
 
 
 # CFE Solution https://github.com/codingforentrepreneurs/30-Days-of-Python/blob/master/Day%206
