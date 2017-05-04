@@ -42,3 +42,10 @@ def fib(num):
 
 for item in fib(10):
 	print(item)
+
+
+from itertools import cycle
+num = (n for n in cycle(range(1, 6)))
+
+next(num)
+
