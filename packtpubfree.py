@@ -19,19 +19,18 @@ r = requests.get(url, headers=header)
 soup = BeautifulSoup(r.text, 'lxml')
 
 
-words = soup.find_all(text=re.compile('Python'))
-
-
 def get_packpub():
+    div = soup.find('div', class_='dotd-main-book-summary float-left')
+    words = div.find_all(text=re.compile('Python'))
+
     if words:
         thumbnails = soup.select('div.dotd-main-book-image.float-left img')
         thumb = 'http:' + thumbnails[0].get('src')
         print(thumb)
         print(soup.h2.get_text().strip())
 
-        word = [word.strip() for word in words]
-
-        print(word[2])
+        for word in words:
+            print(word)
 
     else:
         print('no match')
