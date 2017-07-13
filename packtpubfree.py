@@ -21,7 +21,8 @@ soup = BeautifulSoup(r.text, 'lxml')
 
 def get_packpub():
     div = soup.find('div', class_='dotd-main-book-summary float-left')
-    words = div.find_all(text=re.compile('Python'))
+    patterns = 'Python|Django|Flask|scikit-learn'
+    words = div.find_all(text=re.compile(patterns))
 
     if words:
         thumbnails = soup.select('div.dotd-main-book-image.float-left img')
