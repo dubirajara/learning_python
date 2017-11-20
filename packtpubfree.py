@@ -7,13 +7,12 @@ import requests
 
 url = 'https://www.packtpub.com/packt/offers/free-learning'
 
-header = {}
-header['Host'] = 'www.packtpub.com'
-header['User-Agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
-header['Accept'] = '*/*'
-header['Accept-Language'] = 'en-US,en;q=0.5'
-header['Accept-Encoding'] = 'gzip, deflate'
-header['Upgrade-Insecure-Requests'] = '1'
+header = {'Host': 'www.packtpub.com',
+          'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0', 
+          'Accept': '*/*',
+          'Accept-Language': 'en-US,en;q=0.5',
+          'Accept-Encoding': 'gzip, deflate',
+          'Upgrade-Insecure-Requests': '1'}
 
 r = requests.get(url, headers=header)
 soup = BeautifulSoup(r.text, 'lxml')
