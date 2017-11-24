@@ -48,4 +48,5 @@ def get_packpub():
 #     task.start()
 
 
-get_packpub()
+if __name__ == "__main__":
+    get_packtpub()
