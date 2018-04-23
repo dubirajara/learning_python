@@ -5,7 +5,6 @@ import requests
 import twitter
 
 
-
 url = 'https://www.packtpub.com/packt/offers/free-learning'
 
 header = {'Host': 'www.packtpub.com',
