@@ -2,12 +2,23 @@ import requests
 import json
 
 
-movie = input('Search the movie: ')
+# movie = input('Search the movie: ')
+# apikey = ''
 
-url = f'http://www.omdbapi.com/?t={movie}&y=&plot=full&r=json'
 
-response = requests.get(url)
-values = json.loads(response.text)
+class MovieSearch:
+    def __init__(self, key):
+        self.key = key
 
-for i, y in values.items():
-    print(i, ':', y)
+    def get_movie(self, title, plot=None):
+        self.url = f'http://www.omdbapi.com/?t={title}&y=&plot={plot}&r=json&apikey={self.key}'
+        self.response = requests.get(self.url)
+        self.values = json.loads(self.response.text)
+        # return self.values
+
+    def all(self):
+        for k, v in self.values.items():
+            print(k, ':', v)
+
+    def get(self, item):
+        return self.values[item.title()]
