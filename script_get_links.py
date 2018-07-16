@@ -7,3 +7,10 @@ r = requests.get(url, headers=header)
 links = re.findall('"((http|ftp)s?://.*?)"', r.text)
 
 print(links)
+
+# from bs4 import BeautifulSoup
+
+# soup = BeautifulSoup(r.content, 'lxml')
+
+# for link in soup.find_all('a', href=True):
+#   print(link['href'])
